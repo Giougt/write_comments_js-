@@ -1,5 +1,10 @@
 import datetime 
-time = datetime.datetime.now()
-time_str = str(time)
-simplify_time= time_str[:19]
-print(simplify_time)
+import pyodide 
+
+@pyodide.export 
+def export_time():
+    time = datetime.datetime.now()
+    time_str = str(time)
+    simplify_time= time_str[:19]
+    return (simplify_time)
+
