@@ -1,13 +1,13 @@
-/*import {export_time} from "./app/run.py";
-//const test = export_time();
-console.log(test);  */
+alert("hello");
 
+const entry = document.createElement("input");
+document.body.appendChild(entry);
 
 //// part script 
-const fs = require ("fs"); 
+const fs = require("fs"); 
 
 const filepath = "./app/backend/save_comments.txt"; 
-fs.writeFile(filepath, "hellozzz", () => {
+fs.writeFile(filepath, "hellozziiiiz", () => {
     if (err) {
         console.error("Error file not modified ", err);
     } else {
@@ -15,6 +15,7 @@ fs.writeFile(filepath, "hellozzz", () => {
     }
 });
 
+console.log("hello");
 
 
 
