@@ -34,14 +34,35 @@ document.getElementById("validate").addEventListener("click", function() {
             entry.value = "";
             throw new Error("not only letters");
         }
-        let b = document.createElement("p");
-        b.append(entry.value);
-        document.body.appendChild(b);
+        let fieldText = document.createElement("p");
+        let fieldTime = document.createElement("p");
+        // append text in page
+        fieldText.append(entry.value);
+        document.body.appendChild(fieldText);
+        //reset 
         entry.value = "";
+        //append time in page
+        fieldTime.append(Timet_today());
+        document.body.appendChild(fieldTime);
+
     } catch (error) {
         console.error("Error detected:", error.message);
     }
 })
+
+function Timet_today() {
+    let today = new Date();
+    today = today.toTimeString();
+    tab = []; 
+    tab2= [];
+    for (let index = 0; index < 9; index++) {
+        tab.push(today[index]);
+    }
+    for (let index = 0; index < tab.length; index++) {
+        tab2 = tab2+ tab[index];
+    }
+    return tab2
+};
 
 
 
