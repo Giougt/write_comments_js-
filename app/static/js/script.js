@@ -26,21 +26,20 @@ document.body.appendChild(add);
 
 // get , add , check value  
 document.getElementById("validate").addEventListener("click", function() {
-    try{
-        if (/^[a-zA-Z\s]+$/.test(entry.value) === false){
-            throw new Error ("not only letter"); 
+    try {
+        if (entry.value === "") {
+            throw new Error("field is empty");
         }
-    }catch (error){
-        console.error("error is detect", error.message); 
-    }
-    if (entry.value !== ""){
-    let b= document.createElement("p");
-    b.append(entry.value);
-    document.body.appendChild(b);
-    entry.value = "";
-    }
-    else{
-        console.error("field is empty")
+        if (/^[a-zA-Z\s]+$/.test(entry.value) === false) {
+            entry.value = "";
+            throw new Error("not only letters");
+        }
+        let b = document.createElement("p");
+        b.append(entry.value);
+        document.body.appendChild(b);
+        entry.value = "";
+    } catch (error) {
+        console.error("Error detected:", error.message);
     }
 })
 
