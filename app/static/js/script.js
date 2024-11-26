@@ -64,6 +64,16 @@ function add_comment() {
         let fieldText = document.createElement("div");
         let fieldTime = document.createElement("div");
         let fieldAll = document.createElement("div");
+        //style fieldAll
+        Object.assign(fieldAll.style,{
+            display : "flex",
+            gap : "10px",
+            backgroundColor : "",
+            marginBottom : "15px",
+            width : "fit-content",
+            overflow : "hidden",
+            flexShrink : "0"
+         });
         // append text in page
         fieldText.append(entry.value);
         fieldAll.appendChild(fieldText);
@@ -72,13 +82,6 @@ function add_comment() {
         //append time in page
         fieldTime.append(Timet_today());
         fieldAll.appendChild(fieldTime);
-        //style 
-        fieldAll.style.display = 'flex';
-        fieldAll.style.gap = '10px';
-        fieldAll.style.backgroundColor = "";
-        fieldAll.style.marginBottom = "15px";
-        fieldAll.style.width = "auto";
-        fieldAll.style.overflow = "hidden";
         //call function color
         colorize(fieldAll,fieldText,fieldTime);
         document.body.appendChild(fieldAll);
@@ -92,6 +95,6 @@ function colorize(ele,text,time) {
     ele.style.backgroundColor = colorBack;
     text.style.color = "white";
     time.style.color = "white";
-}
+};
 
 
