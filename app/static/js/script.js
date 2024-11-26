@@ -10,6 +10,7 @@ add.id="validate"
 //settup color 
 const changeColor = document.createElement("input");
 changeColor.type = "color";
+changeColor.id= "tagColor";
 
 Object.assign(entry.style, {
     backgroundColor: "black",
@@ -74,10 +75,23 @@ function add_comment() {
         //style 
         fieldAll.style.display = 'flex';
         fieldAll.style.gap = '10px';
+        fieldAll.style.backgroundColor = "";
+        fieldAll.style.marginBottom = "15px";
+        fieldAll.style.width = "auto";
+        fieldAll.style.overflow = "hidden";
+        //call function color
+        colorize(fieldAll,fieldText,fieldTime);
         document.body.appendChild(fieldAll);
     } catch (error) {
         console.error("Error detected:", error.message);
     }
 };
+
+function colorize(ele,text,time) {
+    let colorBack = document.getElementById("tagColor").value;
+    ele.style.backgroundColor = colorBack;
+    text.style.color = "white";
+    time.style.color = "white";
+}
 
 
