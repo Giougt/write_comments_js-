@@ -1,3 +1,5 @@
+import write_file from "../module/write";
+
 //input text
 const entry = document.createElement("input");
 entry.id="input_Field";
@@ -98,3 +100,6 @@ function colorize(ele,text,time) {
 };
 
 
+function write_file(params) {
+    
+}
