@@ -1,4 +1,4 @@
-import write_file from "../module/write";
+// import write_file from "../module/write";
 
 //input text
 const entry = document.createElement("input");
