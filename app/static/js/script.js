@@ -1,4 +1,4 @@
-import write_file from "../module/write.js";
+
 
 //input text
 const entry = document.createElement("input");
@@ -43,8 +43,8 @@ document.getElementById("input_Field").addEventListener("keypress",function(even
 function Timet_today() {
     let today = new Date();
     today = today.toTimeString();
-    tab = []; 
-    tab2= [];
+    let tab = []; 
+    let tab2= [];
     for (let index = 0; index < 9; index++) {
         tab.push(today[index]);
     }
@@ -87,6 +87,9 @@ function add_comment() {
         //call function color
         colorize(fieldAll,fieldText,fieldTime);
         document.body.appendChild(fieldAll);
+        // export data 
+        let data_message = fieldAll.value;
+        return data_message;
     } catch (error) {
         console.error("Error detected:", error.message);
     }
@@ -100,3 +103,7 @@ function colorize(ele,text,time) {
 };
 
 
+export function data_send(){
+    let data = add_comment();
+    return data;
+}

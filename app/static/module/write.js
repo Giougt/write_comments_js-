@@ -1,5 +1,5 @@
 import fs from "fs";
-
+import { data_send } from "../js/script.js";
 
 function write_file(text) {
     const filepath = "./app/backend/save_comments.txt";
@@ -12,5 +12,5 @@ function write_file(text) {
     });
 };
 
-write_file();
+write_file(data_send());
 
