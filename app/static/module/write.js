@@ -1,5 +1,6 @@
 import fs from "fs";
 
+
 function write_file(text) {
     const filepath = "./app/backend/save_comments.txt";
     fs.writeFile(filepath, text, () => {
@@ -11,5 +12,5 @@ function write_file(text) {
     });
 };
 
-export default write_file;
+write_file();
 

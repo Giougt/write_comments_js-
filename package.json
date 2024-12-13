@@ -2,9 +2,10 @@
   "name": "python_web",
   "version": "1.0.0",
   "description": "\"# python_web\"",
-  "main": "script.js",
+  "main": "./app/static/js/index.js",
+  "module": "./app/static/js/module/script.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "live-server"
   },
   "keywords": [],
