@@ -107,3 +107,27 @@ export function data_send(){
     let data = add_comment();
     return data;
 }
+
+
+////test send data 
+/* 
+function send_comment_to_server(text) {
+    fetch("http://localhost:3000/save-comment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data.message);
+    })
+    .catch((error) => console.error("Error while sending data:", error));
+}
+
+document.getElementById("validate").addEventListener("click", () => {
+    const text = add_comment();
+    if (text) {
+        send_comment_to_server(text);
+    }
+});
+*/
