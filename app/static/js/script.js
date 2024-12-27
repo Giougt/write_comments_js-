@@ -1,4 +1,4 @@
-// import write_file from "../module/write";
+
 
 //input text
 const entry = document.createElement("input");
@@ -43,8 +43,8 @@ document.getElementById("input_Field").addEventListener("keypress",function(even
 function Timet_today() {
     let today = new Date();
     today = today.toTimeString();
-    tab = []; 
-    tab2= [];
+    let tab = []; 
+    let tab2= [];
     for (let index = 0; index < 9; index++) {
         tab.push(today[index]);
     }
@@ -87,6 +87,9 @@ function add_comment() {
         //call function color
         colorize(fieldAll,fieldText,fieldTime);
         document.body.appendChild(fieldAll);
+        // export data 
+        let data_message = fieldAll.value;
+        return data_message;
     } catch (error) {
         console.error("Error detected:", error.message);
     }
@@ -100,6 +103,31 @@ function colorize(ele,text,time) {
 };
 
 
-function write_file(params) {
-    
+export function data_send(){
+    let data = add_comment();
+    return data;
 }
+
+
+////test send data 
+/* 
+function send_comment_to_server(text) {
+    fetch("http://localhost:3000/save-comment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data.message);
+    })
+    .catch((error) => console.error("Error while sending data:", error));
+}
+
+document.getElementById("validate").addEventListener("click", () => {
+    const text = add_comment();
+    if (text) {
+        send_comment_to_server(text);
+    }
+});
+*/
