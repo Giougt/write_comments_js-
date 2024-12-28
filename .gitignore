@@ -1,3 +1,5 @@
+# Ignorer le dossier node_modules
 node_modules/
-package-lock.json/
 
+# Ignorer tous les fichiers .json
+*.json
